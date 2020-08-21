@@ -7,18 +7,18 @@ public class Program
         for (int i = 0; i < n; i++)
         {
             //粒子iの座標の取得
-            x = position[i].x;
-            y = position[i].y;
-            z = position[i].z;
+            float x = position[i].x;
+            float y = position[i].y;
+            float z = position[i].z;
             if (x < x_begin | x > x_end) Time.timeScale = 0;
             if (y < y_begin | y > y_end) Time.timeScale = 0;
             if (z < z_begin | z > z_end) Time.timeScale = 0;
 
             //indexの計算
-            x_i = (int)(x - x_begin) / re + 1;
-            y_i = (int)(y - y_begin) / re + 1;
-            z_i = (int)(z - z_begin) / re + 1;
-            index = x_i * y_i * z_i - 1;
+            int x_i = (int)((x - x_begin) / re + 1);
+            int y_i = (int)((y - y_begin) / re + 1);
+            int z_i = (int)((z - z_begin) / re + 1);
+            int index = x_i * y_i * z_i - 1;
 
             //それぞれのリストの値を更新
             grid_table[index].Add(i);
